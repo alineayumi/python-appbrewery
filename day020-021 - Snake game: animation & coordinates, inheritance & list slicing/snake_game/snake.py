@@ -43,3 +43,14 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def add_segment(self, position):
+        seg = Turtle("square")
+        seg.color("white")
+        seg.penup()
+        seg.setposition(position[0], position[1])
+        self.snake.append(seg)
+
+    def extend(self):
+        self.add_segment(self.snake[-1].position())
+
